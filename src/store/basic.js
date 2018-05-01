@@ -1,7 +1,7 @@
 import {tagSet} from "./tags";
 
 function toObject(sentence) {
-  const parts = sentence.match(/\S+/g) || [];
+  const parts = sentence.replace(/[\.\,\?।\'\"\(\)\@\$৳\&\+]+/g, '').match(/\S+/g) || [];
 
   return parts.map(function (p) {
     return {
