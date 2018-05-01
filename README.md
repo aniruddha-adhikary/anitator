@@ -1,4 +1,4 @@
-# Anitator
+# Anitator ![](https://travis-ci.org/aniruddha-adhikary/anitator.svg?branch=master)
 
 A free tool for annotating text.
 
