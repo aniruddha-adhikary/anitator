@@ -36,6 +36,7 @@
     font-size: 32px;
     padding: 7px;
     cursor: pointer;
+    border-radius: 10px;
   }
 
   span.part:hover {
@@ -43,7 +44,7 @@
   }
 
   span.selected {
-    background: chartreuse;
+    background: #f1c40f;
   }
 
   span.spacer {

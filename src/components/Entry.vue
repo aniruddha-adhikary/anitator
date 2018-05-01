@@ -1,7 +1,13 @@
 <template>
-  <div class="col-12">
-    <div class="row">
+  <div>
+    <div class="row header">
+      <div class="col-12 text-center">
+        <h2>Anitator</h2>
+      </div>
+    </div>
+    <div class="row entry-area">
       <textarea cols="30" rows="10" class="form-control"
+                placeholder="Begin by pasting or typing in the box, and pressing Start...."
                 v-model="text"></textarea>
     </div>
     <div class="row buttons">
@@ -37,5 +43,17 @@
 
   .buttons button {
     margin: 7px;
+  }
+
+  .entry-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .entry-area textarea {
+    max-width: 960px;
+    font-size: 20px;
+    color: black;
   }
 </style>

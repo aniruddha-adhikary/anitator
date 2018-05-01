@@ -27,6 +27,13 @@ export const store = {
     sentenceIndex: 0,
     finished: false
   },
+  reset: function() {
+    this.state.sentenceIndex = 0;
+    this.state.selectedIndex = 0;
+    this.state.currentSentence = [];
+    this.state.setSentences = [];
+    this.state.finished = false;
+  },
   setSentence: function (sentence) {
     this.state.currentSentence = sentence;
     this.state.selectedIndex = 0;
@@ -36,13 +43,16 @@ export const store = {
     this.state.sentenceIndex = 0;
     this.setSentence(this.state.sentences[0]);
   },
-  nextSentence() {
-    this.setSentence(this.state.sentences[++this.state.sentenceIndex]);
+  changeSentence(i) {
+    this.state.sentenceIndex = i;
+    this.setSentence(this.state.sentences[i])
     return this.state.currentSentence;
   },
+  nextSentence() {
+    return this.changeSentence(this.state.sentenceIndex + 1);
+  },
   previousSentence() {
-    this.setSentence(this.state.sentences[--this.state.sentenceIndex]);
-    return this.state.currentSentence;
+    return this.changeSentence(this.state.sentenceIndex - 1);
   },
   hasNextSentence() {
     return this.state.sentenceIndex + 1 < this.state.sentences.length;
