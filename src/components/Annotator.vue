@@ -9,6 +9,7 @@
     <div class="spacer"></div>
     <div class="buttons row">
       <button class="btn btn-primary"
+              v-on:click="store.assignTag(tag)"
               v-for="tag of tags">{{ tag.display }} [{{ tag.shortKey }}]
       </button>
     </div>
